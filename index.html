@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulah Loyalty Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page 1: Phone Number Input -->
+    <div id="page1" class="page active">
+        <div class="container">
+            <div class="logo">
+                <h1>MULAH</h1>
+            </div>
+            
+            <div class="welcome-text">
+                <h2>Hello,<br>Welcome !</h2>
+            </div>
+            
+            <p class="subtitle">Check Your Loyalty Points & Rewards</p>
+            
+            <form id="phoneForm">
+                <div class="phone-input-container">
+                    <select class="country-code">
+                        <option value="+60">+60</option>
+                    </select>
+                    <input 
+                        type="tel" 
+                        class="phone-input" 
+                        id="phoneNumber"
+                        placeholder="Enter your mobile number"
+                        maxlength="10"
+                    >
+                </div>
+                <div id="phoneError" class="error-message" style="display: none;">
+                    Please enter the correct phone number
+                </div>
+                
+                <button type="submit" class="btn-primary">Check Loyalty Points</button>
+            </form>
+        </div>
+        
+        <div class="footer">
+            Powered by <a href="#">MulahRewards.com</a>
+        </div>
+    </div>
+
+    <!-- Page 2: Registration Form -->
+    <div id="page2" class="page">
+        <div class="container">
+            <div class="logo">
+                <h1>MULAH</h1>
+            </div>
+            
+            <div class="welcome-text">
+                <h2>Registration</h2>
+                <p style="color: #666; margin-top: 10px;">Please fill up your details.</p>
+            </div>
+            
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input 
+                        type="text" 
+                        class="input-field" 
+                        id="userName"
+                        placeholder="Enter Name"
+                        required
+                    >
+                    <div id="nameError" class="error-message" style="display: none;">
+                        *Please insert a name.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Birthday</label>
+                    <div class="birthday-container">
+                        <input 
+                            type="number" 
+                            class="birthday-input" 
+                            id="day"
+                            placeholder="DD"
+                            min="1" 
+                            max="31"
+                            required
+                        >
+                        <input 
+                            type="number" 
+                            class="birthday-input" 
+                            id="month"
+                            placeholder="MM"
+                            min="1" 
+                            max="12"
+                            required
+                        >
+                        <input 
+                            type="number" 
+                            class="birthday-input" 
+                            id="year"
+                            placeholder="YYYY"
+                            min="1900" 
+                            max="2024"
+                            required
+                        >
+                    </div>
+                    <div id="birthdayError" class="error-message" style="display: none;">
+                        *Please insert your birthday.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input 
+                        type="email" 
+                        class="input-field" 
+                        id="userEmail"
+                        placeholder="Email Address"
+                    >
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="noEmail">
+                        <label for="noEmail">No email address</label>
+                    </div>
+                    <div id="emailError" class="error-message" style="display: none;">
+                        *Please insert a valid email address.
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary">Continue</button>
+            </form>
+        </div>
+        
+        <div class="footer">
+            Powered by <a href="#">MulahRewards.com</a>
+        </div>
+    </div>
+
+    <!-- Page 3: Data Display -->
+    <div id="page3" class="page">
+        <div class="container">
+            <div class="logo">
+                <h1>MULAH</h1>
+            </div>
+            
+            <div class="success-icon"></div>
+            
+            <div class="welcome-text">
+                <h2>Registration Complete!</h2>
+                <p style="color: #666; margin-top: 10px;">Here are your details:</p>
+            </div>
+            
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="data-label">Phone Number:</span>
+                    <span class="data-value" id="displayPhone"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Name:</span>
+                    <span class="data-value" id="displayName"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Email:</span>
+                    <span class="data-value" id="displayEmail"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Birthday:</span>
+                    <span class="data-value" id="displayBirthday"></span>
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="resetForm()">Start Over</button>
+        </div>
+        
+        <div class="footer">
+            Powered by <a href="#">MulahRewards.com</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
